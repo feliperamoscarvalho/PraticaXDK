@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Registro de Pacientes</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, and is needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+    <!-- See explanation at the bottom of this file for info regarding placement of JS libraries. -->
+    <!-- These library references (below) are just examples to give you the general idea... -->
+    <!-- <script src="lib/mc/hammer.js"></script> -->
+    <!-- <script src="lib/ft/fastclick.js"></script> -->
+    <!-- <script src="lib/jq/jquery.js"></script> -->
+
+    <link rel="stylesheet" href="css/app.css">
+    
+    <link rel="stylesheet" href="css/themes/my-custom-theme.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.structure-1.0.1.min.css" /> 
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script> 
+    <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script> 
+
+    
+    
+    <script src="js/banco_dados.js"></script>
+    
+</head>
+
+
+<body>
+    
+    <!-- DIV para tela de listagem de Pacientes -->
+    <div data-role="page" id="ListaPacientes">
+        <div data-role="header" data-theme="a">
+            <a href="#IncluirPacientes" data-role="button" class="ui-btn-right homeBtn" data-theme="c" data-icon="plus" data-transition="slideup">Incluir</a>
+            <h1>Pacientes</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-theme="c" id="pacientes">
+                <p id="semErros" style="display:none;">Nenhum Paciente Cadastrado!</p>
+            </ul>
+        </div>        
+    </div>
+    
+    <!-- DIV para tela de cadastro de Pacientes -->
+    <div data-role="page" id="IncluirPacientes">
+        <div data-role="header" data-theme="a">
+            <h1>Incluir Pacientes</h1>
+        </div>
+        <div data-role="content">
+            <div class="Form-Pacientes">
+                <form id="form-pacientes">
+                    <input id="NomePacientes" placeholder="Nome" required/>
+                    <input id="IdadePacientes" placeholder="Idade" />
+                    <input id="EmailPacientes" placeholder="E-mail" type="email"/>
+                    <input type="button" value="Incluir" id="IncluirPacientes" data-icon="plus" />
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    
+</body>
+
+</html>
